@@ -49,6 +49,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\Artist.cs" />
+    <Compile Include="Data\ArtistRepository.cs" />
+    <Compile Include="Data\Series.cs" />
+    <Compile Include="Data\SeriesRepository.cs" />
+    <Compile Include="Windows\ArtistsEditWindow.xaml.cs">
+      <DependentUpon>ArtistsEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ArtistsListWindow.xaml.cs">
+      <DependentUpon>ArtistsListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PublisherEditWindow.xaml.cs">
+      <DependentUpon>PublisherEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PublisherListWindow.xaml.cs">
+      <DependentUpon>PublisherListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SeriesEditWindow.xaml.cs">
+      <DependentUpon>SeriesEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SeriesListWindow.xaml.cs">
+      <DependentUpon>SeriesListWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -59,10 +81,36 @@
     </Compile>
     <Compile Include="Data\Comic.cs" />
     <Compile Include="Data\ComicRepository.cs" />
+    <Compile Include="Data\Publisher.cs" />
+    <Compile Include="Data\PublisherRepository.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\ArtistsEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ArtistsListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PublisherEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PublisherListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SeriesEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SeriesListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

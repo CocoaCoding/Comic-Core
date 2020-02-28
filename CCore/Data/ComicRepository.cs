@@ -62,6 +62,5 @@ namespace CCore.Data
         {
             return new List<Comic>(this.comics);
         }
-
     }
 }
