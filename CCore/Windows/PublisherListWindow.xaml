@@ -6,7 +6,35 @@
         xmlns:local="clr-namespace:CCore.Windows"
         mc:Ignorable="d"
         Title="Publishers" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resources\TextStylesDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
     <Grid>
-        
+
+        <ListView Margin="0" Name="mainListView">
+            <ListView.View>
+                <GridView>
+
+                    <GridViewColumn Header="Publisher" Width="400">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Style="{StaticResource NormalStyle}"  Text="{Binding PublisherName}"/>
+                                    <TextBlock Style="{StaticResource SmallStyle}" Text="{Binding Id}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
     </Grid>
+    
 </Window>

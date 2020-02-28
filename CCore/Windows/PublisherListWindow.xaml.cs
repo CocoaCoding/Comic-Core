@@ -22,6 +22,8 @@ namespace CCore.Windows
         {
             InitializeComponent();
             this.publisherRepository = publisherRepository;
+
+            this.mainListView.ItemsSource = this.publisherRepository.GetAll();
         }
     }
 }
