@@ -22,8 +22,24 @@ namespace CCore.Windows
         {
             InitializeComponent();
             this.publisherRepository = publisherRepository;
-
             this.mainListView.ItemsSource = this.publisherRepository.GetAll();
+        }
+
+        private void OnNewButtonClick(object sender, RoutedEventArgs e)
+        {
+            Publisher publisher = new Publisher();
+            PublisherEditWindow publisherEditWindow = new PublisherEditWindow(WindowOpenMode.NewData, publisher);
+            publisherEditWindow.ShowDialog();
+            if (publisherEditWindow.DialogResult.HasValue && publisherEditWindow.DialogResult.Value)
+            {
+                this.publisherRepository.Add(publisher);
+                this.publisherRepository.Save();
+            }
+        }
+
+        private void OnEditButtonClick(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

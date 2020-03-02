@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CCore.Windows"
         mc:Ignorable="d"
-        Title="PublisherEditWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="PublisherEditWindow" Height="250" Width="400" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resources\TextStylesDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Row="0" Margin="0,10,0,0">
+            <TextBlock Text="GUID" Style="{StaticResource NormalStyle}" Margin="5,5,5,0"></TextBlock>
+            <TextBlock Text="XXXXXXX" Style="{StaticResource NormalStyle}" Margin="5,5,5,0" Name="guidTextBlock"></TextBlock>
+            <TextBlock Text="Publisher Name" Style="{StaticResource NormalStyle}" Margin="5"></TextBlock>
+            <TextBox Height="20" Margin="5" Name="publisherNameTextBox"></TextBox>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Grid.Row="1">
+            <Button Width="100" Height="30" Margin="15,0,15,0" Name="cancelButton" Click="OnCancelButtonClick">Cancel</Button>
+            <Button Width="100" Height="30" Margin="0,0,15,0" Name="okButton" Click="OnOkButtonClick">Ok</Button>
+        </StackPanel>        
         
     </Grid>
 </Window>

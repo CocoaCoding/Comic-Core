@@ -16,8 +16,17 @@
     </Window.Resources>
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <ListView Margin="0" Name="mainListView">
+        <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Grid.Row="0">
+            <Button Width="100" Height="30" Margin="15,0,15,0" Name="newButton" Click="OnNewButtonClick" >New</Button>
+            <Button Width="100" Height="30" Margin="0,0,15,0" Name="editButton" Click="OnEditButtonClick" >Edit</Button>
+        </StackPanel>
+
+        <ListView Margin="0" Name="mainListView" Grid.Row="1">
             <ListView.View>
                 <GridView>
 

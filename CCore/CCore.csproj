@@ -51,6 +51,8 @@
     </ApplicationDefinition>
     <Compile Include="Data\Artist.cs" />
     <Compile Include="Data\ArtistRepository.cs" />
+    <Compile Include="Data\Enums.cs" />
+    <Compile Include="Data\IRepository.cs" />
     <Compile Include="Data\Series.cs" />
     <Compile Include="Data\SeriesRepository.cs" />
     <Compile Include="Windows\ArtistsEditWindow.xaml.cs">

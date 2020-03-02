@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CCore.Data
 {
-    public class PublisherRepository
+    public class PublisherRepository : IRepository<Publisher>
     {
         private List<Publisher> publishers;
 
@@ -37,6 +37,16 @@ namespace CCore.Data
         public List<Publisher> GetAll()
         {
             return new List<Publisher>(this.publishers);
+        }
+
+        public void Save()
+        {
+        }
+
+        public bool Add(Publisher item)
+        {
+            this.publishers.Add(item);
+            return true;
         }
     }
 }

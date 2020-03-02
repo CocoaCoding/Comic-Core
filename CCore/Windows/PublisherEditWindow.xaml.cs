@@ -1,26 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using CCore.Data;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace CCore.Windows
 {
-    /// <summary>
-    /// Interaktionslogik für PublisherEditWindow.xaml
-    /// </summary>
     public partial class PublisherEditWindow : Window
     {
-        public PublisherEditWindow()
+        private Publisher publisher;
+
+        public PublisherEditWindow(WindowOpenMode openMode, Publisher publisher)
         {
             InitializeComponent();
+            this.publisher = publisher;
+            if (openMode == WindowOpenMode.EditData)
+            {
+                this.UpdateView();
+            }
+        }
+
+        private void UpdateView()
+        {
+            this.guidTextBlock.Text = this.publisher.Id.ToString();
+            this.publisherNameTextBox.Text = this.publisher.PublisherName;
+        }
+
+        private void UpdateModel()
+        {
+            this.publisher.PublisherName = this.publisherNameTextBox.Text.Trim();
+        }
+
+        private void OnOkButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.UpdateModel();
+            this.DialogResult = true;
+        }
+
+        private void OnCancelButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
         }
     }
 }
