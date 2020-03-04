@@ -5,7 +5,15 @@ using System.Text;
 
 namespace CCore.Data
 {
-    class Artist
+    public class Artist
     {
+        public Guid Id { get; set; }
+
+        public string ArtistName { get; set; }
+
+        public Artist()
+        {
+            this.Id = Guid.NewGuid();
+        }
     }
 }

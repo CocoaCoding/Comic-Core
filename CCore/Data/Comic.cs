@@ -12,7 +12,7 @@ namespace CCore.Data
         public string Title { get; set; }
         public DateTime PublishedDate { get; set; }
         public double CoverPrice { get; set; }
-        public List<String> Artists { get; set; }
-        public string Publisher { get; set; }
+        public List<Artist> Artists { get; set; }
+        public Publisher Publisher { get; set; }
     }
 }

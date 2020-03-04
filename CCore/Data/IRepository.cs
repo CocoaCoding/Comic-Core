@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace CCore.Data
 {
@@ -7,7 +8,7 @@ namespace CCore.Data
         bool Add(T item);
 
         void Save();
-        
-        List <T> GetAll();
+
+        ObservableCollection<T> GetAll();
     }
 }

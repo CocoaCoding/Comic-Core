@@ -11,16 +11,20 @@ namespace CCore.Windows
         {
             InitializeComponent();
             this.publisher = publisher;
-            if (openMode == WindowOpenMode.EditData)
-            {
-                this.UpdateView();
-            }
+            this.UpdateView(openMode);
         }
 
-        private void UpdateView()
+        private void UpdateView(WindowOpenMode openMode)
         {
+            if (openMode == WindowOpenMode.EditData)
+            {
             this.guidTextBlock.Text = this.publisher.Id.ToString();
             this.publisherNameTextBox.Text = this.publisher.PublisherName;
+            }
+            else if (openMode == WindowOpenMode.NewData)
+            {
+                this.guidTextBlock.Text = this.publisher.Id.ToString();
+            }
         }
 
         private void UpdateModel()

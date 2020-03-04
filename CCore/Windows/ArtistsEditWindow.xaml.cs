@@ -1,26 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using CCore.Data;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace CCore.Windows
 {
-    /// <summary>
-    /// Interaktionslogik für ArtistsEditWindow.xaml
-    /// </summary>
     public partial class ArtistsEditWindow : Window
     {
-        public ArtistsEditWindow()
+        private Artist artist;
+
+        public ArtistsEditWindow(WindowOpenMode openMode, Artist artist)
         {
             InitializeComponent();
+            this.artist = artist;
+            this.UpdateView(openMode);
         }
+
+        private void UpdateView(WindowOpenMode openMode)
+        {
+            if (openMode == WindowOpenMode.EditData)
+            {
+                this.guidTextBlock.Text = this.artist.Id.ToString();
+                this.artistNameTextBox.Text = this.artist.ArtistName;
+            }
+            else if (openMode == WindowOpenMode.NewData)
+            {
+                this.guidTextBlock.Text = this.artist.Id.ToString();
+            }
+        }
+
+        private void UpdateModel()
+        {
+            this.artist.ArtistName = this.artistNameTextBox.Text.Trim();
+        }
+
+        private void OnOkButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.UpdateModel();
+            this.DialogResult = true;
+        }
+
+        private void OnCancelButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
+        }
+
     }
 }

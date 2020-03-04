@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 
 namespace CCore.Data
 {
     public class PublisherRepository : IRepository<Publisher>
     {
-        private List<Publisher> publishers;
+        private ObservableCollection <Publisher> publishers;
 
         public PublisherRepository()
         {
-            this.publishers = new List<Publisher>();
+            this.publishers = new ObservableCollection<Publisher>();
             this.CreateDemoData();
         }
 
@@ -34,9 +32,9 @@ namespace CCore.Data
             this.publishers.Add(p);
         }
 
-        public List<Publisher> GetAll()
+        public ObservableCollection<Publisher> GetAll()
         {
-            return new List<Publisher>(this.publishers);
+            return this.publishers;
         }
 
         public void Save()

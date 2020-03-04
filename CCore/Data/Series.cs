@@ -1,11 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace CCore.Data
 {
-    class Series
+    public class Series
     {
+        public string SeriesTitle { get; set; }
+        public bool IsLimitedSeries { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public Publisher SeriesPublisher { get; set; }
     }
 }
