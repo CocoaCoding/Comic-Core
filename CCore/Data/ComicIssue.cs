@@ -5,14 +5,15 @@ using System.Text;
 
 namespace CCore.Data
 {
-    public class Comic
+    public class ComicIssue
     {
+        public Guid Id { get; set; }
         public string Series { get; set; }
         public string Issue { get; set; }
         public string Title { get; set; }
         public DateTime PublishedDate { get; set; }
         public double CoverPrice { get; set; }
-        public List<Artist> Artists { get; set; }
-        public Publisher Publisher { get; set; }
+        public ICollection<ComicArtist> Artists { get; set; }
+        public ComicPublisher Publisher { get; set; }
     }
 }

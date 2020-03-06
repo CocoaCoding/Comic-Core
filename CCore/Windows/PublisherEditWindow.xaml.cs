@@ -5,9 +5,9 @@ namespace CCore.Windows
 {
     public partial class PublisherEditWindow : Window
     {
-        private Publisher publisher;
+        private ComicPublisher publisher;
 
-        public PublisherEditWindow(WindowOpenMode openMode, Publisher publisher)
+        public PublisherEditWindow(WindowOpenMode openMode, ComicPublisher publisher)
         {
             InitializeComponent();
             this.publisher = publisher;

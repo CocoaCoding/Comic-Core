@@ -6,19 +6,19 @@ using System.Text;
 
 namespace CCore.Data
 {
-    public class ComicRepository : IRepository<Comic>
+    public class ComicRepository : IRepository<ComicIssue>
     {
-        ObservableCollection<Comic> comics;
+        List<ComicIssue> comics;
 
         public ComicRepository()
         {
-            comics = new ObservableCollection<Comic>();
+            comics = new List<ComicIssue>();
             this.CreateDemoData();
         }
 
         private void CreateDemoData()
         {
-            Comic comic = new Comic();
+            ComicIssue comic = new ComicIssue();
             comic.Series = "The Amazing Spider-Man";
             comic.Issue = "123";
            // comic.Publisher = "Marvel";
@@ -26,7 +26,7 @@ namespace CCore.Data
             comic.PublishedDate = DateTime.Now;
             this.comics.Add(comic);
 
-            comic = new Comic();
+            comic = new ComicIssue();
             comic.Series = "Immortal Hulk";
             comic.Issue = "23";
             //comic.Publisher = "Marvel";
@@ -34,7 +34,7 @@ namespace CCore.Data
             comic.PublishedDate = DateTime.Now;
             this.comics.Add(comic);
 
-            comic = new Comic();
+            comic = new ComicIssue();
             comic.Series = "Invincible Iron Man";
             comic.Issue = "399";
            // comic.Publisher = "Marvel";
@@ -42,7 +42,7 @@ namespace CCore.Data
             comic.PublishedDate = DateTime.Now;
             this.comics.Add(comic);
 
-            comic = new Comic();
+            comic = new ComicIssue();
             comic.Series = "Action Comics";
             comic.Issue = "999";
             //comic.Publisher = "DC";
@@ -50,7 +50,7 @@ namespace CCore.Data
             comic.PublishedDate = DateTime.Now;
             this.comics.Add(comic);
 
-            comic = new Comic();
+            comic = new ComicIssue();
             comic.Series = "Spawn";
             comic.Issue = "1";
             //comic.Publisher = "Image";
@@ -59,12 +59,12 @@ namespace CCore.Data
             this.comics.Add(comic);
         }
 
-        public ObservableCollection<Comic> GetAll()
+        public List<ComicIssue> GetAll()
         {
             return this.comics;
         }
 
-        public bool Add(Comic item)
+        public bool Add(ComicIssue item)
         {
             this.comics.Add(item);
             return true;

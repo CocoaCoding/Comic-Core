@@ -9,6 +9,6 @@ namespace CCore.Data
 
         void Save();
 
-        ObservableCollection<T> GetAll();
+        List<T> GetAll();
     }
 }

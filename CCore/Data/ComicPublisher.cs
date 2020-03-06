@@ -2,13 +2,13 @@
 
 namespace CCore.Data
 {
-    public class Publisher
+    public class ComicPublisher
     {
         public Guid Id { get; set; }
 
         public string PublisherName { get; set; }
 
-        public Publisher()
+        public ComicPublisher()
         {
             this.Id = Guid.NewGuid();
         }

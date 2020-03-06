@@ -12,5 +12,9 @@ namespace CCore
     /// </summary>
     public partial class App : Application
     {
+
+
+
+
     }
 }

@@ -6,17 +6,17 @@ using System.Text;
 
 namespace CCore.Data
 {
-    public class SeriesRepository : IRepository<Series>
+    public class SeriesRepository : IRepository<ComicSeries>
     {
-        private ObservableCollection<Series> series;
+        private List<ComicSeries> series;
 
-        public bool Add(Series item)
+        public bool Add(ComicSeries item)
         {
             this.series.Add(item);
             return true;
         }
 
-        public ObservableCollection<Series> GetAll()
+        public List<ComicSeries> GetAll()
         {
             return this.series;
         }

@@ -5,13 +5,11 @@ using System.Text;
 
 namespace CCore.Data
 {
-    public class Artist
+    public class ComicArtist
     {
         public Guid Id { get; set; }
-
         public string ArtistName { get; set; }
-
-        public Artist()
+        public ComicArtist()
         {
             this.Id = Guid.NewGuid();
         }

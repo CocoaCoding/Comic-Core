@@ -6,22 +6,22 @@ using System.Text;
 
 namespace CCore.Data
 {
-    public class ArtistRepository : IRepository<Artist>
+    public class ArtistRepository : IRepository<ComicArtist>
     {
-        private ObservableCollection<Artist> artists;
+        private List<ComicArtist> artists;
 
-        bool IRepository<Artist>.Add(Artist item)
+        bool IRepository<ComicArtist>.Add(ComicArtist item)
         {
             this.artists.Add(item);
             return true;
         }
 
-        ObservableCollection<Artist> IRepository<Artist>.GetAll()
+        List<ComicArtist> IRepository<ComicArtist>.GetAll()
         {
             return this.artists;
         }
 
-        void IRepository<Artist>.Save()
+        void IRepository<ComicArtist>.Save()
         {
             throw new NotImplementedException();
         }

@@ -5,9 +5,9 @@ namespace CCore.Windows
 {
     public partial class ArtistsEditWindow : Window
     {
-        private Artist artist;
+        private ComicArtist artist;
 
-        public ArtistsEditWindow(WindowOpenMode openMode, Artist artist)
+        public ArtistsEditWindow(WindowOpenMode openMode, ComicArtist artist)
         {
             InitializeComponent();
             this.artist = artist;
